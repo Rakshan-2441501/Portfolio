@@ -73,6 +73,7 @@ const works: Work[] = [
         description: "Full-featured grocery e-commerce platform built during an internship at Cubensquare. Features intuitive shopping and cart management.",
         techStack: ["Java", "Maven", "MySQL"],
         color: "#ea580c",
+        image: "/projects/generated/grocery.png",
         viewType: "desktop"
     },
     {
@@ -82,7 +83,18 @@ const works: Work[] = [
         description: "Aimed at helping farmers efficiently utilize agricultural waste, exchange resources, and rent farming equipment. (macOS/Windows)",
         techStack: ["Java", "MySQL"],
         color: "#65a30d",
-        viewType: "desktop"
+        viewType: "desktop",
+        image: "/projects/agrilink.png",
+        screenshots: [
+            "/projects/agrilink.png",
+            "/projects/agrilink/1.png",
+            "/projects/agrilink/2.png",
+            "/projects/agrilink/3.png",
+            "/projects/agrilink/4.png",
+            "/projects/agrilink/5.png",
+            "/projects/agrilink/6.png",
+            "/projects/agrilink/7.png"
+        ]
     },
     {
         id: 5,
@@ -91,7 +103,18 @@ const works: Work[] = [
         description: "Second implementation of AgriLink enhancing system performance and usability specifically for the Windows ecosystem.",
         techStack: [".NET (C#)", "MySQL"],
         color: "#0284c7",
-        viewType: "desktop"
+        viewType: "desktop",
+        image: "/projects/agrilink.png",
+        screenshots: [
+            "/projects/agrilink.png",
+            "/projects/agrilink/1.png",
+            "/projects/agrilink/2.png",
+            "/projects/agrilink/3.png",
+            "/projects/agrilink/4.png",
+            "/projects/agrilink/5.png",
+            "/projects/agrilink/6.png",
+            "/projects/agrilink/7.png"
+        ]
     },
     {
         id: 6,
@@ -121,6 +144,7 @@ const works: Work[] = [
         description: "Banking simulation system replicating core functionalities like secure account management, balance checking, and fund transfers.",
         techStack: ["JavaCore"],
         color: "#059669",
+        image: "/projects/generated/banking.png",
         viewType: "desktop"
     },
     {
@@ -130,6 +154,7 @@ const works: Work[] = [
         description: "Platform for patients to consult doctors online and track health records seamlessly, integrated with a dummy hospital DB.",
         techStack: ["HTML/JS/PHP", "MySQL"],
         color: "#e11d48",
+        image: "/projects/generated/healthcare.png",
         viewType: "desktop"
     },
     {
@@ -139,6 +164,7 @@ const works: Work[] = [
         description: "System helping teachers manage student attendance, grading, and timetables efficiently.",
         techStack: ["C++"],
         color: "#9333ea",
+        image: "/projects/generated/school.png",
         viewType: "desktop"
     },
     {
@@ -173,15 +199,6 @@ const works: Work[] = [
             "/projects/inblooms/3.png",
             "/projects/inblooms/4.png"
         ]
-    },
-    {
-        id: 12,
-        title: "InnoWave 2025–26",
-        category: "Event Platform",
-        description: "Flagship event site for Christ Incubation Center allowing incubatees to showcase startups and manage panel discussions.",
-        techStack: ["Web Tech"],
-        color: "#0d9488",
-        viewType: "desktop"
     },
 ];
 
