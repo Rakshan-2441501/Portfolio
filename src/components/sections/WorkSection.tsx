@@ -173,101 +173,96 @@ function WorkCard({ work, index, y }: { work: Work; index: number; y: any }) {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <div className="w-full aspect-[4/5] relative overflow-hidden mb-8 bg-neutral-900 flex items-center justify-center isolation-auto border border-neutral-800/50 group-hover:border-neutral-700 transition-colors duration-500">
+            <div className="w-full aspect-[16/10] relative overflow-hidden mb-8 bg-neutral-900 rounded-xl isolation-auto border border-neutral-800/50 group-hover:border-neutral-700 transition-all duration-500 shadow-2xl">
+                {/* Browser-like window controls */}
+                <div className="absolute top-0 left-0 right-0 h-8 bg-neutral-800/50 backdrop-blur-md flex items-center px-4 gap-1.5 z-30 border-b border-neutral-700/30">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                </div>
+
                 <AnimatePresence mode="wait">
                     {work.screenshots ? (
                         <motion.img
                             key={currentImageIndex}
                             src={work.screenshots[currentImageIndex]}
                             alt={`${work.title} screenshot ${currentImageIndex + 1}`}
-                            initial={{ opacity: 0, scale: 1.1 }}
-                            animate={{ opacity: 0.6, scale: 1.1 }}
-                            whileHover={{ opacity: 1, scale: 1.1 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="absolute w-full h-[115%] -top-[10%] left-0 object-cover transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                            transition={{ duration: 0.4 }}
+                            className="absolute inset-0 w-full h-full object-cover object-top pt-8 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.02]"
                         />
                     ) : work.image ? (
                         <motion.img
                             src={work.image}
                             alt={work.title}
-                            className="absolute w-full h-[115%] -top-[10%] left-0 object-cover opacity-60 group-hover:scale-110 group-hover:opacity-100 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                            className="absolute inset-0 w-full h-full object-cover object-top pt-8 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.02]"
                         />
                     ) : (
-                        <svg
-                            width="100%"
-                            height="100%"
-                            viewBox="0 0 400 500"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="opacity-40 group-hover:scale-110 group-hover:opacity-80 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
-                        >
-                            <rect width="400" height="500" fill={work.color} opacity="0.05" />
-                            <motion.circle
-                                cx="200"
-                                cy="250"
-                                r="120"
-                                stroke={work.color}
-                                strokeWidth="1"
-                                fill="transparent"
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 1, delay: 0.2 }}
-                            />
-                            <motion.circle
-                                cx="200"
-                                cy="250"
-                                r="60"
-                                stroke={work.color}
-                                strokeWidth="0.5"
-                                fill="transparent"
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 1.5, delay: 0.4 }}
-                            />
-                            <line x1="0" y1="0" x2="400" y2="500" stroke={work.color} strokeWidth="0.5" opacity="0.3" />
-                            <line x1="400" y1="0" x2="0" y2="500" stroke={work.color} strokeWidth="0.5" opacity="0.3" />
-                        </svg>
+                        <div className="w-full h-full flex items-center justify-center pt-8">
+                            <svg
+                                width="100%"
+                                height="100%"
+                                viewBox="0 0 400 500"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="opacity-40 group-hover:scale-110 group-hover:opacity-80 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                            >
+                                <rect width="400" height="500" fill={work.color} opacity="0.05" />
+                                <motion.circle
+                                    cx="200"
+                                    cy="250"
+                                    r="120"
+                                    stroke={work.color}
+                                    strokeWidth="1"
+                                    fill="transparent"
+                                />
+                                <line x1="0" y1="0" x2="400" y2="500" stroke={work.color} strokeWidth="0.5" opacity="0.3" />
+                                <line x1="400" y1="0" x2="0" y2="500" stroke={work.color} strokeWidth="0.5" opacity="0.3" />
+                            </svg>
+                        </div>
                     )}
                 </AnimatePresence>
 
                 {hasMultipleImages && (
-                    <div className="absolute inset-0 flex items-center justify-between px-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4 z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <button
                             onClick={prevImage}
-                            className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+                            className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 shadow-xl"
                         >
-                            <ChevronLeft size={24} />
+                            <ChevronLeft size={20} />
                         </button>
                         <button
                             onClick={nextImage}
-                            className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+                            className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 shadow-xl"
                         >
-                            <ChevronRight size={24} />
+                            <ChevronRight size={20} />
                         </button>
                     </div>
                 )}
 
                 {hasMultipleImages && (
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-40 px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-full border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {work.screenshots!.map((_, idx) => (
                             <div
                                 key={idx}
-                                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${idx === currentImageIndex ? "w-4 bg-white" : "bg-white/30"
+                                className={`w-1 h-1 rounded-full transition-all duration-300 ${idx === currentImageIndex ? "w-3 bg-white" : "bg-white/30"
                                     }`}
                             />
                         ))}
                     </div>
                 )}
 
-                <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-10 right-4 flex flex-wrap justify-end gap-2 items-end z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-[200px]">
                     {work.techStack.map(tech => (
-                        <span key={tech} className="px-3 py-1 bg-black/80 backdrop-blur-md text-white text-[10px] uppercase tracking-widest font-mono rounded-full border border-neutral-800">
+                        <span key={tech} className="px-2 py-0.5 bg-black/70 backdrop-blur-md text-white text-[9px] uppercase tracking-wider font-mono rounded-md border border-white/10">
                             {tech}
                         </span>
                     ))}
                 </div>
             </div>
+
 
             <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-start">
