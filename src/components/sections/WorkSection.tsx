@@ -46,6 +46,27 @@ const works: Work[] = [
         viewType: "mobile"
     },
     {
+        id: 13,
+        title: "SunShine Info",
+        category: "Corporate Website",
+        description: "Official website for a CCTV and security products company, showcasing their products and services with a professional, clean interface.",
+        techStack: ["React", "CSS", "Modern UI"],
+        color: "#facc15",
+        image: "/projects/sunshine.png",
+        screenshots: [
+            "/projects/sunshine.png",
+            "/projects/sunshine/1.png",
+            "/projects/sunshine/2.png",
+            "/projects/sunshine/3.png",
+            "/projects/sunshine/4.png",
+            "/projects/sunshine/5.png",
+            "/projects/sunshine/6.png",
+            "/projects/sunshine/7.png",
+            "/projects/sunshine/8.png",
+        ],
+        viewType: "desktop"
+    },
+    {
         id: 3,
         title: "Grocery E-Commerce",
         category: "Full-Stack Web",
