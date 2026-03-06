@@ -25,7 +25,14 @@ const works: Work[] = [
         techStack: ["Flutter", "Firebase"],
         color: "#2563eb",
         image: "/projects/christ-online.png",
-        screenshots: ["/projects/christ-online.png", "/projects/christ-online/1.png"],
+        screenshots: [
+            "/projects/christ-online.png",
+            "/projects/christ-online/1.png",
+            "/projects/christ-online/2.png",
+            "/projects/christ-online/3.png",
+            "/projects/christ-online/4.png",
+            "/projects/christ-online/5.png"
+        ],
         viewType: "mobile"
     },
     {
